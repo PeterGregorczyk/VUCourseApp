@@ -9,9 +9,9 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.VUCourseApp.R
 import com.example.VUCourseApp.data.model.CourseAPI
-import com.example.VUCourseApp.databinding.FragmentLoginBinding
+import com.example.shitapp.R
+import com.example.shitapp.databinding.FragmentLoginBinding
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

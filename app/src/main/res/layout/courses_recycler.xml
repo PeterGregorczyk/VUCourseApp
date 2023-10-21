@@ -21,6 +21,7 @@
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,8 +35,8 @@
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/courseTitle"
-            app:layout_constraintStart_toStartOf="@+id/courseTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/courseTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

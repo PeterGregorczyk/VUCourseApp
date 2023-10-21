@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.VUCourseApp.databinding.FragmentNotificationsBinding
+import com.example.shitapp.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
 

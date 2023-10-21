@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.shitapp"
+        applicationId = "com.example.VUCourseApp"
         minSdk = 27
         targetSdk = 34
         versionCode = 1

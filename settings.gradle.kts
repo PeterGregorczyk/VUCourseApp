@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ShitApp"
+rootProject.name = "VUCourseApp"
 include(":app")
  

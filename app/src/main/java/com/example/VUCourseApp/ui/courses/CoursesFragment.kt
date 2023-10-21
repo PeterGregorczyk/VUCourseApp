@@ -48,7 +48,7 @@ class CoursesFragment : Fragment() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val courses = courseApi.getCourses().courses
-                adapter.addData(courses)
+               adapter.addData(courses)
                 Log.e("CoursesFragment", "got courses ${courses}")
             } catch (e: Exception) {
                 Log.e("CoursesFragment", "Error fetching courses: ${e.message}")

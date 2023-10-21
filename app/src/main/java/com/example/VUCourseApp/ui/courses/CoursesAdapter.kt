@@ -3,23 +3,24 @@ package com.example.VUCourseApp.ui.courses
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.VUCourseApp.data.model.Course
 import com.example.shitapp.R
 
-class CourseAdapter( private var data: List<Course>) : RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
-
+class CourseAdapter(private var data: List<Course>) :
+    RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
     class CourseViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(info: Course) {
 
             //these are the recyclerview xml ID's
-//            val title = view.findViewById<TextView>(R.id.courseTitle)
-//            val description = view.findViewById<TextView>(R.id.courseDescription)
+            val title = view.findViewById<TextView>(R.id.courseTitle)
+            val description = view.findViewById<TextView>(R.id.courseDescription)
 //
 //            //binding courseTitle api to the text in title & description
-//            title.text = info.courseTitle
-//            description.text = info.courseDescription
+            title.text = info.courseTitle
+            description.text = info.courseDescription
         }
     }
 
@@ -27,7 +28,7 @@ class CourseAdapter( private var data: List<Course>) : RecyclerView.Adapter<Cour
 
         //this is finding which fragment to use as the display
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_courses, parent, false)
+            .inflate(R.layout.courses_recycler, parent, false)
         return CourseViewHolder(view)
     }
 
