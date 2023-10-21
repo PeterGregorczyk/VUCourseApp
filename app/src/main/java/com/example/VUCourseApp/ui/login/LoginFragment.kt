@@ -6,15 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import com.example.VUCourseApp.data.model.CourseAPI
+import com.example.VUCourseApp.data.model.LoginResponse
 import com.example.shitapp.R
 import com.example.shitapp.databinding.FragmentLoginBinding
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -28,9 +33,14 @@ class LoginFragment : Fragment() {
             .build()
     }
 
+    private var userName = ""
+    private var password = ""
+
     private val courseApi: CourseAPI by lazy {
         retrofit.create(CourseAPI::class.java)
     }
+
+    private val loginResponseLiveData = MutableLiveData<LoginResponse?>(null)
 
     private var _binding: FragmentLoginBinding? = null
 
@@ -41,29 +51,38 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val username = root.findViewById<TextInputEditText>(R.id.TextUsername)
-        val password = root.findViewById<TextInputEditText>(R.id.TextPassword)
+        loginResponseLiveData.observe(viewLifecycleOwner) {
+            it?.let { response ->
+                Toast.makeText(this.context, "${response.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        root.findViewById<TextInputEditText>(R.id.TextUsername).addTextChangedListener {
+            userName = it.toString()
+        }
+
+        root.findViewById<TextInputEditText>(R.id.TextPassword).addTextChangedListener {
+            password = it.toString()
+        }
 
         root.findViewById<Button>(R.id.loginButton).setOnClickListener {
             CoroutineScope(Dispatchers.Main).launch {
                 try {
-                    val login = courseApi.login(username = username.text.toString(), password = password.text.toString())
-                    if (login.message == "Failed") {
-                        Toast.makeText(context, "this has failed", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
+                    val response = courseApi.login(username = userName, password = password)
+                    if (response.message == "Successful") {
+                        loginResponseLiveData.value = response
                         root.findNavController().navigate(R.id.navigation_dashboard)
+                    } else {
+                        loginResponseLiveData.value = LoginResponse(message = "Login failed. Please check your credentials.")
                     }
                 } catch (e: Exception) {
-                    Log.e("CoursesFragment", "Error fetching courses: ${e.message}")
+                    loginResponseLiveData.value = LoginResponse(message = "Network call failed $e")
                 }
-
             }
         }
 
