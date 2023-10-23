@@ -32,9 +32,9 @@ class CoursesFragment : Fragment() {
     private val binding get() = _binding!!
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
         _binding = FragmentCoursesBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
 
         val searchText = root.findViewById<SearchView>(R.id.TextSearch)
         val recyclerView = root.findViewById<RecyclerView>(R.id.coursesRecycler)

@@ -22,8 +22,8 @@ class CourseAdapter(private var data: List<Course>) :
             //these are the recyclerview xml ID's
             val title = view.findViewById<TextView>(R.id.coursesTitle)
             val description = view.findViewById<TextView>(R.id.coursesDescription)
-//
-//            //binding courseTitle api to the text in title & description
+
+            //binding courseTitle api to the text in title & description
             title.text = info.courseTitle
             description.text = info.courseDescription
         }
@@ -53,8 +53,8 @@ class CourseAdapter(private var data: List<Course>) :
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val charSearch = constraint.toString()
-                if (charSearch.isEmpty()) {
-                    dataFilterList = data
+                dataFilterList = if (charSearch.isEmpty()) {
+                    data
                 } else {
                     val resultList = ArrayList<Course>()
                     for (row in data) {
@@ -64,7 +64,7 @@ class CourseAdapter(private var data: List<Course>) :
                             resultList.add(row)
                         }
                     }
-                    dataFilterList = resultList
+                    resultList
                 }
                 val filterResults = FilterResults()
                 filterResults.values = dataFilterList

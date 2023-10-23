@@ -80,6 +80,17 @@
                 android:id="@+id/loginButton" />
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="242dp"
+            android:layout_height="156dp"
+            android:layout_marginTop="40dp"
+            android:src="@mipmap/vu_logo_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
