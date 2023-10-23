@@ -5,4 +5,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_login">Login</string>
     <string name="title_courses">Courses</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="dashboard_greeting">Welcome Peter Gregorczyk</string>
+    <string name="dashboard_student_ID">Student ID: s4661352</string>
+    <string name="dashboard_degree">Degree: Bachelor of Information Technology</string>
+    <string name="dashboard_Major">Major: Mobile Application Development</string>
+    <string name="dashboard_nextCourse">Next Course: Robotics CLub \n Monday \n 12:00pm</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur</string>
 </resources>
