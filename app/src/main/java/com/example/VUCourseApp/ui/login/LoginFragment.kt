@@ -76,7 +76,7 @@ class LoginFragment : Fragment() {
                     val response = courseApi.login(username = userName, password = password)
                     if (response.message == "Successful") {
                         loginResponseLiveData.value = response
-                        root.findNavController().navigate(R.id.navigation_dashboard)
+                        root.findNavController().navigate(R.id.navigation_home)
                     } else {
                         loginResponseLiveData.value = LoginResponse(message = "Login failed. Please check your credentials.")
                     }

@@ -14,13 +14,23 @@
         tools:context=".MainActivity">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Courses"
+            android:textSize="28sp"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
             android:id="@+id/searchText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Search"
+            android:paddingTop="10dp"
             android:layout_marginStart="16sp"
             android:layout_marginEnd="16sp"
-            android:textColor="@color/navBlue"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:textStyle="bold" />
 
