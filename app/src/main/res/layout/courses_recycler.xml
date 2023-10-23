@@ -13,31 +13,33 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/courseTitle"
+            android:id="@+id/coursesTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="This is a very long title and here it is"
+            android:text="coursesTitle goes here"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/courseDescription"
+            android:id="@+id/coursesDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="This is a very long title and here it is"
+            android:text="coursesDescription goes in here"
+            android:paddingBottom="5dp"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/courseTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/coursesTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

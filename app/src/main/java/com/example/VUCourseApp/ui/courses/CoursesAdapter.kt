@@ -15,8 +15,8 @@ class CourseAdapter(private var data: List<Course>) :
         fun bind(info: Course) {
 
             //these are the recyclerview xml ID's
-            val title = view.findViewById<TextView>(R.id.courseTitle)
-            val description = view.findViewById<TextView>(R.id.courseDescription)
+            val title = view.findViewById<TextView>(R.id.coursesTitle)
+            val description = view.findViewById<TextView>(R.id.coursesDescription)
 //
 //            //binding courseTitle api to the text in title & description
             title.text = info.courseTitle

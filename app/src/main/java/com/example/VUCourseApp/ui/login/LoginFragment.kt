@@ -28,7 +28,7 @@ class LoginFragment : Fragment() {
 
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("https://5ceb-106-71-104-5.ngrok-free.app") // Add the correct base url
+            .baseUrl("https://0e0a-106-71-104-5.ngrok-free.app") // Add the correct base url
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.VUCourseApp.data.model.CourseAPI
@@ -21,7 +22,7 @@ class CoursesFragment : Fragment() {
 
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("https://5ceb-106-71-104-5.ngrok-free.app") // Add the correct base url
+            .baseUrl("https://0e0a-106-71-104-5.ngrok-free.app") // Add the correct base url
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }
@@ -38,6 +39,8 @@ class CoursesFragment : Fragment() {
 
         _binding = FragmentCoursesBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.coursesRecycler)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
